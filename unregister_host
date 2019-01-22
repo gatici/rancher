@@ -1,0 +1,7 @@
+
+docker rm -f $(docker ps -a -q)
+docker rmi -f $(docker images -q)
+service docker stop
+rm -rf /var/lib/docker
+rm -rf /var/lib/rancher/state
+service docker start
